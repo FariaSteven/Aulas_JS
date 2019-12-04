@@ -1,0 +1,140 @@
+<!--<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Adicionar()">Add </button> 
+
+    <div class="box"></div>
+    <script>
+        function Adicionar(){
+        var boxElement = document.querySelector('.box')
+
+        boxElement.style.width = 100
+        boxElement.style.height = 100
+        boxElement.style.backgroundColor = 'green' 
+        }
+
+    </script>
+</body>
+</html>
+-->
+
+<!--
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <button onmouseover="getRandomColor()">Mudar cor do quadrado</button>
+    <div class="box"></div>
+    <script>
+        function getRandomColor() {
+            var newColor = document.querySelector('.box')
+            
+
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+                newColor.style.width = 100 
+                newColor.style.height =100
+                newColor.style.backgroundColor = color
+            }
+
+
+    </script>
+</body>
+</html>
+-->
+
+<!--
+<html>
+    <head>
+        <title>Document</title>
+    </head>
+    <body>  
+    <div>
+        <div class="app"></div>
+        <ul>
+            
+        </ul>
+    </div>
+        <script>
+            var listElement = document.querySelector('ul')
+
+            var nomes = [
+                'aaa',
+                'asdasd',
+                'asd'
+            ];
+            
+            function printaNomes(){
+
+                for(name of nomes){
+                    var nameElement = document.createElement('li');
+                    var nameText = document.createTextNode(name);
+
+                    nameElement.appendChild(nameText)
+                    listElement.appendChild(nameElement)
+                }
+
+            }
+            printaNomes();
+
+        </script>
+    </body>
+</html>
+-->
+
+<!--
+<html>
+<head>
+    <title>Document</title>
+    <input type="text" name="nome" placeholder="fds um nomes">
+    <button onclick="add()">Adicionar</button>
+</head>
+<body>
+
+    <ul>
+    </ul>
+
+    <script>
+        var listElement = document.querySelector('ul')
+        var inputElement = document.querySelector('input')
+        var buttonElement = document.querySelector('button')
+
+        var names = localStorage.getItem('nomes')
+
+        function renderNames(){
+            
+            
+            for(name of names)
+            var nameElement = document.createElement('li')
+            var nameText = document.createTextNode(name)
+
+            nameElement.appendChild(nameText)
+            listElement.appendChild(nameElement)
+        }
+
+        function add(){
+            var nameText = inputElement.value
+            names.push(nameText)
+            inputElement.value = ''
+            renderNames()
+            saveNomes()
+        }
+
+        buttonElement.onclick = add
+
+        function saveNomes(){
+            localStorage.setItem('nomes', JSON.stringify(names))
+        }
+
+    </script>
+</body>
+</html>
+-->
+
